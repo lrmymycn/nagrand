@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>iButler</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <div id="home" style="display:none;">
+        	<img src="img/home.png" alt="" class="bg"/>
+        	<div class="menu">
+        		<h1 class="logo"><a href="index.html" class="ir">iButler</a></h1>
+        		<nav class="clearfix">
+        			<div class="inner">
+        				<a href="what.html" class="spinner"><div class="spin-outter"></div><div class="spin-inner"></div>WHAT</a>
+        				<a href="why.html" class="spinner"><div class="spin-outter"></div><div class="spin-inner"></div>WHY</a>
+        				<a href="how/index.html" class="spinner"><div class="spin-outter"></div><div class="spin-inner"></div>HOW</a>
+        				<a href="where.html" class="spinner"><div class="spin-outter"></div><div class="spin-inner"></div>WHERE</a>
+        				<a href="who.html" class="spinner"><div class="spin-outter"></div><div class="spin-inner"></div>WHO</a>	
+        			</div>   			
+        		</nav>
+        	</div>
+        </div>
+        <footer>
+        	&copy; iButler Terms and Privacy
+        </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+		<script>
+			function resizeHome(){
+				var h = $(window).height() - $('#home').height();
+				if(h > 0){
+					$('#home').css('marginTop', h/2);
+				}else{
+					$('#home').css('marginTop', 0);
+				}
+				
+				var menuHeight = $('#home').height() * 0.27;
+				if(menuHeight < 150){
+					menuHeight = 150;
+				}
+				$('#home .menu').height(menuHeight).css('marginTop', 0 - (menuHeight/2 + 20));
+			}
+			$(window).load(function(){
+				$('#home').show();
+				resizeHome();
+			});
+			
+			$(window).resize(function(){
+				resizeHome();
+			});
+		</script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
